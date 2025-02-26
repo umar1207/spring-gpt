@@ -17,7 +17,7 @@ public class AIServiceHelper {
 
     public String chat(String question){
         return this.chatClient.prompt()
-                .user(question)
+                .user("Your are a PR Code Reviewer, this is my PR provide a 1 line review comment for these git diffs (+ means code addition, - means code removal, consider a new line whenever a + or - is encounter) PS:ignore styling issues: " + question)
                 .call()
                 .content();
     }
